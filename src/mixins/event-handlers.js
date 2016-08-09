@@ -67,7 +67,7 @@ var EventHandlers = {
     if (!this.state.dragging) {
       return;
     }
-    if (this.state.animating) {
+    if (this.props.waitForAnimate && this.state.animating) {
       return;
     }
     var swipeLeft;
