@@ -86,14 +86,14 @@ export var InnerSlider = React.createClass({
   },
   render: function () {
     var className = classnames('slick-initialized', 'slick-slider', this.props.className);
-
+    var clickHandler = this.props.onClick ? this.props.onClick : new Function();
     var trackProps = {
       fade: this.props.fade,
       cssEase: this.props.cssEase,
       speed: this.props.speed,
       infinite: this.props.infinite,
       centerMode: this.props.centerMode,
-      focusOnSelect: this.props.focusOnSelect ? this.selectHandler : new Function(),
+      focusOnSelect: this.props.focusOnSelect ? this.selectHandler : clickHandler,
       currentSlide: this.state.currentSlide,
       lazyLoad: this.props.lazyLoad,
       lazyLoadedList: this.state.lazyLoadedList,
